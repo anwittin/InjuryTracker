@@ -27,12 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-EMAIL_HOST
-EMAIL_HOST_USER
-EMAIL_MAIN
-EMAIL_HOST_PASSWORD
-EMAIL_PORT
-EMAIL_USER_TLS
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'anwittin@gmail.com'
+EMAIL_MAIN = 'anwittin@gmail.com'
+EMAIL_HOST_PASSWORD = '*****'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -119,7 +119,9 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 
 )
-
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED=True
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
 SITE_ID = 1
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
